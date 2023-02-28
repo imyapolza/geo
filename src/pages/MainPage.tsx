@@ -1,6 +1,6 @@
 import LeftSide from '../components/LeftSide/LeftSide';
 import MainSide from '../components/MainSide/MainSide';
-import styles from '../styles/App.module.scss';
+import styles from './styles/MainPage.module.scss';
 
 import useChangePage from '../hooks/useChangePage';
 import useSetObjects from '../hooks/useSetObjects';
