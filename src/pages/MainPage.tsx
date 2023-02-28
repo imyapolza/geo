@@ -5,7 +5,7 @@ import styles from './styles/MainPage.module.scss';
 import useChangePage from '../hooks/useChangePage';
 import useSetObjects from '../hooks/useSetObjects';
 
-const MainPage = () => {
+const MainPage = (): JSX.Element => {
   const isLoading = useSetObjects();
 
   useChangePage();

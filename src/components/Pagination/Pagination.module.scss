@@ -1,0 +1,18 @@
+.wrapper {
+    margin-top: 50px;
+}
+
+.page {
+    display: block;
+    font-weight: bold;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.hidden {
+    visibility: hidden;
+}

@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import { useDispatch, useSelector } from 'react-redux';
 import LIMIT from '../../constants/pagination-limit';
 import {
@@ -7,9 +6,11 @@ import {
   setCurrentObject
 } from '../../redux/slices/objectsSlice';
 import { RootState } from '../../redux/store';
+import List from '../List/List';
+import Pagination from '../Pagination/Pagination';
 import styles from './LeftSide.module.scss';
 
-const LeftSide = () => {
+const LeftSide = (): JSX.Element => {
   const dispatch = useDispatch();
 
   const currentId = useSelector(
@@ -20,12 +21,14 @@ const LeftSide = () => {
     (state: RootState) => state.items
   );
 
+  const maxPage = Math.ceil(objects.length / LIMIT);
+
   const onSetCurrent = (id: number) => {
     dispatch(setCurrentObject(id));
   };
 
   const onNextPage = () => {
-    if (page < Math.ceil(objects.length / LIMIT)) {
+    if (page < maxPage) {
       dispatch(nextPage());
     }
   };
@@ -39,23 +42,17 @@ const LeftSide = () => {
   return (
     <>
       <ul className={styles.list}>
-        {currentItems.map(({ id }, key) => (
-          <li key={key}>
-            <button
-              className={clsx({
-                [styles.active]: Number(currentId) === Number(id)
-              })}
-              onClick={() => onSetCurrent(Number(id))}
-            >
-              {id}
-            </button>
-          </li>
-        ))}
-        <span className={styles.page}>Страница: {page}</span>
-        <div className={styles.pagination}>
-          <button onClick={onPrevPage}>{String('<')}</button>
-          <button onClick={onNextPage}>{String('>')}</button>
-        </div>
+        <List
+          currentItems={currentItems}
+          onSetCurrent={onSetCurrent}
+          currentId={Number(currentId)}
+        />
+        <Pagination
+          page={page}
+          onPrevPage={onPrevPage}
+          onNextPage={onNextPage}
+          maxPage={maxPage}
+        />
       </ul>
     </>
   );

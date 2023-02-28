@@ -8,7 +8,7 @@ interface Props {
   valueIsUrl: boolean;
 }
 
-const FieldValue = ({ value, valueIsUrl }: Props) => {
+const FieldValue = ({ value, valueIsUrl }: Props): JSX.Element => {
   if (!(typeof value === 'number') && validDateRGXP.test(value)) {
     const newDate = dateSeparation(value);
 

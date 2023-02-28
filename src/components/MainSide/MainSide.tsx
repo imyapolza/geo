@@ -8,7 +8,7 @@ interface ObjectViewProps {
   field: object;
 }
 
-const ObjectView = ({ field }: ObjectViewProps) => {
+const ObjectView = ({ field }: ObjectViewProps): JSX.Element => {
   return (
     <>
       {field &&
