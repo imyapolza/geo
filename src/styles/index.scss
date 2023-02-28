@@ -32,8 +32,8 @@ button {
   a,
   span {
     display: block;
-    width: 250px;
-    overflow: hidden;
+    overflow: visible;
     white-space: nowrap;
+    width: 80vw;
   }
 }
