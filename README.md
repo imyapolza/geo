@@ -2,7 +2,7 @@
 
 (dev)
 -npm install (Скачиваем зависимости)
--npm run start или -npm run 
+-npm run start
 
 (prod)
 -npm install (Скачиваем зависимости)
