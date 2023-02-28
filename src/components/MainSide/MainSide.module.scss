@@ -1,0 +1,28 @@
+.wrapper {
+    border: 5px solid black;
+    padding: 25px;
+    margin-left: 100px;
+}
+
+.field {
+    display: block;
+
+    &__name {
+        display: inline;
+        margin-right: 10px;
+    }
+}
+
+.field:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.field>span {
+    margin-left: 40px;
+}
+
+@media (max-width: 1370px) {
+    .wrapper {
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,19 @@
+$true: green;
+$false: red;
+
+.true {
+    color: $true;
+}
+
+.false {
+    color: $false;
+}
+
+.true,
+.false {
+    margin-left: 0 !important;
+}
+
+.resetMargin {
+    margin: 0 !important;
+}

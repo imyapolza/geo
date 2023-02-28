@@ -1,0 +1,33 @@
+.list {
+    border: 5px solid black;
+    min-width: 10em;
+    text-align: center;
+    padding: 10px;
+    max-height: 32em;
+}
+
+.list>li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.active {
+    font-weight: bold;
+}
+
+.page {
+    margin-top: 50px;
+    display: block;
+    font-weight: bold;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+@media (max-width: 1370px) {
+    .list {
+        margin-bottom: 50px;
+    }
+}
